@@ -253,57 +253,49 @@ human pose estimation often focuses on 2D projections, neglecting 3D statuses. T
           <div class="container">
             <h2 class="title is-3">Object Removal Results by ProPainter</h2>
 
-              <div class="item item-video1">
-                    <div>
-                      <span>Original video</span>
-                    </div>
-                    <div>
-                      <video poster="" id="video1" autoplay controls muted loop width="50%">
-                        <!-- Your video file here -->
-                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-src.mp4" type="video/mp4">
-                      </video>
-                    </div>
-                 
-                    <div>
-                      <span>Masked video</span>
-                    </div>
-                    <div>
-                      <video poster="" id="video1" autoplay controls muted loop width="50%">
-                        <!-- Your video file here -->
-                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/masked_in.mp4" type="video/mp4">
-                      </video>
-                    </div>
-      
-                    <div>
-                      <span>Pure background video</span>
-                    </div>
-                    <div>
-                      <video poster="" id="video1" autoplay controls muted loop width="50%">
-                        <!-- Your video file here -->
-                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/inpaint_out.mp4" type="video/mp4">
-                      </video>
-                  </div>
-  
-                    <div>
-                      <span>Without background</span>
-                    </div>
-                    <div>
-                      <video poster="" id="video1" autoplay controls muted loop width="50%">
-                        <!-- Your video file here -->
-                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-pure.mp4" type="video/mp4">
-                      </video>
-                    </div>
+            <div class="col-sm-10" style=" flex-direction:row;">
+              <div style="display: flex; margin-left: 0em">
+                <div style="flex:1;" align="center">
+                  <div class="font-georgia bold">Original video</div>
+                  <video id="v11" width="95%" autoplay loop muted>
+                    <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-src.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div style="flex:1;" align="center">
+                  <div class="font-georgia bold">Finally result</div>
+                  <video id="v11" width="95%" autoplay loop muted>
+                    <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-dance_4_new.mp4" type="video/mp4" />
+                  </video>
+                </div>
 
-                    <div>
-                      <span>Finally result</span>
-                    </div>
-                    <div>     
-                      <video poster="" id="video1" autoplay controls muted loop width="50%">
-                        <!-- Your video file here -->
-                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-dance_4_new.mp4" type="video/mp4">
-                      </video>
-                    </div>
               </div>
+            </div>
+            
+            <div class="col-sm-10" style=" flex-direction:row;">
+              <div style="display: flex; margin-left: 0em">
+                <div style="flex:1;" align="center">
+                  <div class="font-georgia bold">Masked video</div>
+                  <video id="v11" width="95%" autoplay loop muted>
+                    <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/masked_in.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+                <div style="flex:1;" align="center">
+                  <div class="font-georgia bold">Pure background video</div>
+                  <video id="v11" width="95%" autoplay loop muted>
+                    <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/inpaint_out.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div style="flex:1;" align="center">
+                  <div class="font-georgia bold">Without background</div>
+                  <video id="v11" width="95%" autoplay loop muted>
+                    <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-pure.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
