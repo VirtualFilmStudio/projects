@@ -1,261 +1,367 @@
-
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Cinematic Transfer</title>
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <base href="/"> -->
+  <title>Cinematic Transfer</title>
+  <link rel="icon" type="image/x-icon" href="https://virtualfilmstudio.github.io/src_cinetransfer/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="../img/logo.png">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-110862391-3');
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    <script src="js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
-
 <body>
-    <div class="container" id="main">
-        <div class="row">
-            <h1 class="col-md-12 text-center">
-                Cinematic Behavior Transfer via NeRF-based Differentiable Filming
-                <br>
-                <small>
-                    Arxiv 2023
-                </small>
-            </h1>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Cinematic Behavior Transfer via NeRF-based Differentiable Filming</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Xuekun Jiang<sup>1*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://anyirao.com/" target="_blank">Anyi Rao</a><sup>2*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=GStTsxAAAAAJ&hl=en" target="_blank">Jinbo Wang</a><sup>1</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=GMzzRRUAAAAJ" target="_blank">Dahua Lin</a><sup>1</sup>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="http://daibo.info/" target="_blank">Bo Dai</a><sup>1</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">ShangHai AI laboratory</sup><sup>1</sup>,</span></span>
+                    <span class="author-block">Standford University</span><sup>2</sup>
+                    <span class="eql-cntrb"><br>ArXiv 2023</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <!-- <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div style="margin-bottom: 0.7em; margin-top:0.2em" class="authors">
-                    <a style="color:#000000;" href="">Xuekun Jiang<sup>1*</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="https://anyirao.com/">Anyi Rao<sup>2*</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Jingbo Wang<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="http://dahua.me/">Dahua Lin<sup>1,3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Dai Bo<sup>1</sup></a>
-                </div>
-
-                <div style="margin-bottom: 0.5em;" class="affiliations">
-                    <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://cs.stanford.edu/">Stanford University<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-                    <br>
-                    <a href="http://mmlab.ie.cuhk.edu.hk/">The Chinese University of Hong Kong<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </br>
-                </div>
-                <div>* denotes equal contribution</div>
-            </div>
-        </div>
-
-        <div style="margin-bottom: 0.7em;" class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <ul class="nav nav-pills nav-justified">
-                        <li>
-                            <a href="https://arxiv.org/abs/">
-                            <image src="../img/paper.png" height="50px"><br>
-                                <h5><strong>Paper</strong></h5>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                            <image src="../img/github_pad.png" height="50px"><br>
-                                <h5><strong>Code (coming)</strong></h5>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                            <image src="../img/paperclip.png" height="50px"><br>
-                                <h5><strong>Data (coming)</strong></h5>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-
-
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Abstract
-                </h3>
-                <image src="img/teaser.png" class="img-responsive" alt="overview" style="width:60%;margin-left:auto;margin-right:auto;"><br>
-                <p class="text-justify">
-                    
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Pipeline
-                </h3>
-                <image src="img/pipeline.jpg" class="img-responsive" alt="overview"><br>
-                <p class="text-justify">
-                    <strong> Overview </strong>
-                    xxxxxx
-                </p>
-            </div>
-        </div>
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Demo Session @ 
-                    <a style="color:#000000;" href="https://s2022.siggraph.org/presentation/?id=papers_230&sess=sess114">SIGGRAPH 2022</a>
-                </h3>
-                <table>
-                    <tr>
-                    <td width="100%">
-                        <video id="v12" width="100%" autoplay loop muted controls>
-                            <source src="https://city-super.github.io/shoot360_files/prerecord.mp4" type="video/mp4" />
-                        </video>
-                    </td>
-                </tr>
-                </table>                
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    User Interface Demo
-                </h3>
-                <table>
-                    <tr>
-                    <td width="100%">
-                        <video id="v11" width="100%" autoplay loop muted controls>
-                            <source src="https://city-super.github.io/shoot360_files/demo.mp4" type="video/mp4" />
-                        </video>
-                    </td>
-                </tr>
-                </table>                
-            </div>
-        </div> -->
-
-       
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Example Results
-                </h3>
-                <image src="img/result.png" class="img-responsive" alt="overview"><br>         
-                <p class="text-justify">
-                    <strong> Qualitative evaluations.</strong>
-                    Column 2-3: LayoutVAE and MolVAE fail to capture valid block topology, while our
-                    BlockPlanner efficiently generates diverse and valid block layouts with reasonable land use categories. Column 5-6: marker
-                    (L) indicates land use level view. Though pixel-based BlockGAN generates sensible structure for large lots, the artifacts such
-                    as the fuzzy boundary are significant. In contrast, our vectorized representation captures much more accurate geometry even
-                    in small areas. (Dimgray color indicates the unfilled regions.)
-                </p>
-            </div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    3D Visualization and Animations
-                </h3>
-                <table>
-                    <tr>
-                    <td width="33%">
-                        <image src="img/supp.png" width=92% class="img-responsive" alt="overview"><br>  
-                    </td>
-                    <td width="32%">
-                        <video id="v11" width="100%" autoplay loop muted controls>
-                            <source src="img/block animation.mp4" type="video/mp4" />
-                        </video>
-                    </td>
-                    <td width="32%">
-                        <video id="v12" width="100%" autoplay loop muted controls>
-                            <source src="img/fun.mp4" type="video/mp4" />
-                        </video>
-                    </td>
-                    
-                </tr>
-                </table>                
-            </div>
-        </div> -->
-            
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    BibTeX
-                </h3>
-                <div class="form-group col-md-10 col-md-offset-1">
-                    <textarea id="bibtex" class="form-control" readonly>
-
-@article{jiang2023cinematic,
-    title={Cinematic Behavior Transfer via NeRF-based Differentiable Filming},
-    author={Jiang, Xuekun and Rao, Anyi and Wang, Jingbo and Lin, Dahua and Dai, Bo},
-    journal={arXiv preprint arXiv:},
-    year={2023}
-}
-</textarea>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-
-	<script type="text/javascript">
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-        showSlides(slideIndex += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-        showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        }
-	</script>
+  </div>
+</section>
 
 
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+      <img src="https://virtualfilmstudio.github.io/src_cinetransfer/images/teaser2.png" alt="MY ALT TEXT"/>
+      <h2 class="content has-text-justified">
+        Given a film shot, a series of visual continuous frames, containing complex camera movement and character motion, we present an approach that estimates the camera trajectory and character motion in a coherent global space. The extracted camera and characters' behavior can be applied to new 2D/3D content through our cinematic transfer pipeline. The 2D cinematic transfer replicates character motion, camera movement, and background with new characters.The 3D cinematic transfer result is similar to 2D results, but have more freedom than 2D, such as changing the lighting and environment. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In the evolving landscape of digital media and video production, the precise manipulation and reproduction of visual elements like camera movements and character actions are highly desired. Existing SLAM methods face limitations in dynamic scenes and 
+human pose estimation often focuses on 2D projections, neglecting 3D statuses. To address these issues, we first introduce a reverse filming behavior estimation technique. It optimizes camera trajectories by leveraging NeRF as a differentiable renderer and refining SMPL tracks. We then introduce a cinematic transfer pipeline that is able to transfer various shot types to a new 2D video or a 3D virtual environment. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column has-text-centered">
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title is-3">2D Cinematic Transfer Results</h2>
+
+              <div class="item item-video2">
+                <span>Ip Man4, 2019<br>the following video contains sound</span>
+                <video poster="" id="video2" autoplay controls muted loop height="100%">
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/demo26-contrast.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video3">
+                <span>The Wild, 2007</span>
+                <video poster="" id="video3" autoplay controls muted loop height="100%">\
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/arc2-contract.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video1">
+                <span>Lalaland, 2016<br>the following video contains sound</span>
+                <video poster="" id="video1" autoplay controls muted loop height="100%">
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-contrast.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video3">
+                <span>Dunkirk, 2017<br>the following video contains sound</span>
+                <video poster="" id="video3" autoplay controls muted loop height="100%">\
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/nolan-13-contrast.mp4" type="video/mp4">
+                </video>
+              </div>
+              
+              
+
+          </div>
+        </div>
+      </section>
+      <!-- End video carousel -->
+
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title is-3">3D Cinematic Transfer Results</h2>
+
+              <div class="item item-video1">
+                <span>Batman vs. Superman, 2016</span>
+                <video poster="" id="video1" autoplay controls muted loop height="100%">
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/shot5-align.mp4" type="video/mp4">
+                </video>
+              </div>
+              
+              <div class="item item-video3">
+                <span>The Wild, 2007</span>
+                <video poster="" id="video3" autoplay controls muted loop height="100%">\
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/arc2-cartoon.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video2">
+                <span>Ringo, 2023<br>the following video contains sound</span>
+                <video poster="" id="video2" autoplay controls muted loop height="100%">
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/demo13-contrast.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <span>Ringo, 2023<br>the following video contains sound</span>
+                <video poster="" id="video3" autoplay controls muted loop height="100%">\
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/demo18-contrast.mp4" type="video/mp4">
+                </video>
+              </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title is-3">Object Removal Results by ProPainter</h2>
+
+              <div class="item item-video1">
+                    <div>
+                      <span>Original video</span>
+                    </div>
+                    <div>
+                      <video poster="" id="video1" autoplay controls muted loop width="50%">
+                        <!-- Your video file here -->
+                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-src.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                 
+                    <div>
+                      <span>Masked video</span>
+                    </div>
+                    <div>
+                      <video poster="" id="video1" autoplay controls muted loop width="50%">
+                        <!-- Your video file here -->
+                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/masked_in.mp4" type="video/mp4">
+                      </video>
+                    </div>
+      
+                    <div>
+                      <span>Pure background video</span>
+                    </div>
+                    <div>
+                      <video poster="" id="video1" autoplay controls muted loop width="50%">
+                        <!-- Your video file here -->
+                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/inpaint_out.mp4" type="video/mp4">
+                      </video>
+                  </div>
+  
+                    <div>
+                      <span>Without background</span>
+                    </div>
+                    <div>
+                      <video poster="" id="video1" autoplay controls muted loop width="50%">
+                        <!-- Your video file here -->
+                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-pure.mp4" type="video/mp4">
+                      </video>
+                    </div>
+
+                    <div>
+                      <span>Finally result</span>
+                    </div>
+                    <div>     
+                      <video poster="" id="video1" autoplay controls muted loop width="50%">
+                        <!-- Your video file here -->
+                        <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/lalaland-dance_4_new.mp4" type="video/mp4">
+                      </video>
+                    </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title is-3">Visualization in 3D Engine</h2>
+
+              <div class="item item-video1">
+                <span>Original shot, Batman vs. Superman, 2016</span>
+                <video poster="" id="video1" autoplay controls muted loop height="100%">
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/shot5-align.mp4" type="video/mp4">
+                </video>
+                
+                <span>A side view in 3d engine of the extracted camera and character behavior</span>
+                <video poster="" id="video1" autoplay controls muted loop height="100%">
+                  <!-- Your video file here -->
+                  <source src="https://virtualfilmstudio.github.io/src_cinetransfer/videos/shot5-align-3d.mp4" type="video/mp4">
+                </video>
+              </div>
+            
+          </div>
+        </div>
+      </section>
+    </div>
+    </div>
+</div>      
 
 
-</html>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{jiang2023cinematic,
+      title={Cinematic Behavior Transfer via NeRF-based Differentiable Filming},
+      author={Jiang, Xuekun and Rao, Anyi and Wang, Jingbo and Lin, Dahua and Dai, Bo},
+      journal={arXiv preprint arXiv:},
+      year={2023}
+  }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
