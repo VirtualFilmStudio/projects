@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Multicam</title>
+    <title>Cinematic Transfer</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,11 +42,10 @@
     <div class="container" id="main">
         <div class="row">
             <h1 class="col-md-12 text-center">
-                Temporal and Contextual Transformer for 
-                <br>Multi-Camera Editing of TV Shows
+                Cinematic Behavior Transfer via NeRF-based Differentiable Filming
                 <br>
                 <small>
-                    ECCVW 2022
+                    Arxiv 2023
                 </small>
             </h1>
         </div>
@@ -54,28 +53,21 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div style="margin-bottom: 0.7em; margin-top:0.2em" class="authors">
-                    <a style="color:#000000;" href="https://anyirao.com/">Anyi Rao<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Xuekun Jiang<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Sichen Wang<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Yuwei Guo<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Zihao Liu<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <br>
-                    <a style="color:#000000;" href="">Dai Bo<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Long Pang<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="">Xiaoyu Wu<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a style="color:#000000;" href="http://dahua.me/">Dahua Lin<sup>2,4</sup></a>
-                    <a style="color:#000000;" href="">Libiao Jin<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="">Xuekun Jiang<sup>1*</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="https://anyirao.com/">Anyi Rao<sup>2*</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="">Jingbo Wang<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="http://dahua.me/">Dahua Lin<sup>1,3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a style="color:#000000;" href="">Dai Bo<sup>1</sup></a>
                 </div>
 
                 <div style="margin-bottom: 0.5em;" class="affiliations">
-                    <a href="https://cs.stanford.edu/">Stanford University<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-                    <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.shlab.org.cn/">Shanghai Artificial Intelligence Laboratory<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://cs.stanford.edu/">Stanford University<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                     <br>
-                    <a href="https://en.cuc.edu.cn/">Communication University of China<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                    <a href="http://mmlab.ie.cuhk.edu.hk/">The Chinese University of Hong Kong<sup>4</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="http://mmlab.ie.cuhk.edu.hk/">The Chinese University of Hong Kong<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </br>
                 </div>
-
+                <div>* denotes equal contribution</div>
             </div>
         </div>
 
@@ -83,21 +75,21 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="https://arxiv.org/abs/2210.08737">
+                            <a href="https://arxiv.org/abs/">
                             <image src="../img/paper.png" height="50px"><br>
                                 <h5><strong>Paper</strong></h5>
                             </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="">
                             <image src="../img/github_pad.png" height="50px"><br>
                                 <h5><strong>Code (coming)</strong></h5>
                             </a>
-                        </li> -->
+                        </li>
                         <li>
-                            <a href="https://mycuhk-my.sharepoint.com/:f:/g/personal/1155113941_link_cuhk_edu_hk/Ei0sDUDDnY1IgTa77nggXR0BElcxNbwZ9N8iUIt_s-LLVA?e=QWGUVK">
+                            <a href="">
                             <image src="../img/paperclip.png" height="50px"><br>
-                                <h5><strong>Data</strong></h5>
+                                <h5><strong>Data (coming)</strong></h5>
                             </a>
                         </li>
                     </ul>
@@ -113,13 +105,7 @@
                 </h3>
                 <image src="img/teaser.png" class="img-responsive" alt="overview" style="width:60%;margin-left:auto;margin-right:auto;"><br>
                 <p class="text-justify">
-                    The ability to choose an appropriate camera view among multiple cameras plays a vital role in TV shows delivery. 
-                    But it is hard to figure out the statistical pattern and apply intelligent processing due to the lack of high-quality training data. 
-                    To solve this issue, we first collect a novel benchmark on this setting with four diverse scenarios including concerts, 
-                    sports games, gala shows, and contests, where each scenario contains 6 synchronized tracks recorded by different cameras. 
-                    It contains 88-hour raw videos that contribute to the 14-hour edited videos. Based on this benchmark, 
-                    we further propose a new approach temporal and contextual transformer that utilizes clues from historical shots and other views to make shot transition decisions and predict which view to be used. 
-                    Extensive experiments show that our method outperforms existing methods on the proposed multi-camera editing benchmark.
+                    
                 </p>
             </div>
         </div>
@@ -127,18 +113,12 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    TVMCE Dataset
+                    Pipeline
                 </h3>
-                <image src="img/data.png" class="img-responsive" alt="overview"><br>
+                <image src="img/pipeline.jpg" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
-                    <strong> Overview of TV shows MultiCamera Editing (TVMCE) Datset.</strong>
-                    We reached out to film and TV production major colleges and follow their professional production
-                    team to acquire data covering various scenarios including
-                    concert, sports, contest and gala show that happen in universities and city theaters/stadiums. 
-                    Our dataset holds a balanced coverage ratio among different scenario categories
-                    with 39% in gala shows and 14% in sports. 
-                    Most shots in our dataset have a time duration between 0 to 8 seconds and 
-                    a few shots are long shots that last longer than 32 seconds.
+                    <strong> Overview </strong>
+                    xxxxxx
                 </p>
             </div>
         </div>
@@ -231,25 +211,14 @@
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
 
-@article{rao2022temporal,
-    title={Temporal and Contextual Transformer for Multi-Camera Editing of TV Shows},
-    author={Rao, Anyi and Jiang, Xuekun and Wang, Sichen and Guo, Yuwei and Liu, Zihao and Dai, Bo and Pang, Long and Wu, Xiaoyu and Lin, Dahua and Jin, Libiao},
-    journal={arXiv preprint arXiv:2210.08737},
-    year={2022}
+@article{jiang2023cinematic,
+    title={Cinematic Behavior Transfer via NeRF-based Differentiable Filming},
+    author={Jiang, Xuekun and Rao, Anyi and Wang, Jingbo and Lin, Dahua and Dai, Bo},
+    journal={arXiv preprint arXiv:},
+    year={2023}
 }
 </textarea>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Acknowledgements
-                </h3>
-                <p class="text-justify">
-                
-                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
-                </p>
             </div>
         </div>
     </div>
