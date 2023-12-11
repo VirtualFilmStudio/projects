@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Meta tags for search engines to crawl -->
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="Virtual Dynamic Storyboard">
+	<meta name="keywords" content="storyboard, engine, movie, video creation, deep learning, video analysis, computer vision">
+	<link rel="author">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/ulg/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script> -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script> -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+		integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+		crossorigin=""></script> -->
+
+	<!-- Title and Icon -->
+	<title>Virtual Dynamic Storyboard</title>
+	<link rel="icon" href="https://virtualfilmstudio.github.io/src/imgs/logo.png" />
+
+	<!-- include css -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="css/index.css?ver=20200601">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script src="js/annimations.js?ver=20200601"></script>
+	<script src="js/responsive.js?ver=20200601"></script>
+
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120923788-2"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"> -->
+	<!-- <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-120923788-2');
+	</script> -->
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light fixed-top shadow" style="background-color: #ffffff;" id="nav-bar">
+		<div class="">
+			<a class="navbar-brand pull-right color-cayan font-georgia" href="#banner" onclick="slideTo('banner'); return false;">
+				<!-- <img src="https://virtualfilmstudio.github.io/src/imgs/virtualfilm_logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+				<b>VDS</b>
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse " id="nav-links1">
+			<div class="navbar-nav ">
+				<a class="nav-item nav-link text-grey" href="#about" onclick="slideTo('about');  return false;">About</a>
+				<a class="nav-item nav-link text-grey" href="#overview" onclick="slideTo('overview');  return false;">Overview</a>
+				<a class="nav-item nav-link text-grey" href="#explore" onclick="slideTo('explore');  return false;">Explore</a>
+				<!-- <a class="nav-item nav-link text-grey" href="#challenge"
+					onclick="slideTo('challenge');  return false;">Challenge</a> -->
+				<!-- <a class="nav-item nav-link text-grey" href="#news" onclick="slideTo('news');  return false;">News</a> -->
+				<!-- <a class="nav-item nav-link text-grey" href="#contact" onclick="slideTo('contact');  return false;">Contact</a> -->
+
+			</div>
+		</div>
+		
+		<!-- <div class="col">
+			<div class="collapse navbar-collapse " id="nav-links1">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link text-grey" herf="#title" onclick="slideTo('title');  return false;">Title</a>
+					<a class="nav-item nav-link text-grey"
+						onclick="slideTo('overview');  return false;">Overview</a>
+					<a class="nav-item nav-link text-grey"
+						onclick="slideTo('explore');  return false;">Explore</a>
+					<a class="nav-item nav-link text-grey"
+						onclick="slideTo('contact');  return false;">Contact</a>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="" width="30%">
+			<div class="collapse navbar-collapse pull-right" id="nav-links2">
+				<div class="navbar-nav">
+
+					<a class="nav-item nav-link text-grey" href="https://arxiv.org/abs/2301.12688" target="_blank">
+						<span>Paper
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+								viewBox="0 0 100 100" class="svg-icon">
+								<path fill="currentColor"
+									d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+								</path>
+								<polygon fill="currentColor"
+									points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+								</polygon>
+							</svg>
+						</span>
+					</a>
+
+					<a class="nav-item nav-link text-grey" href="https://github.com/VirtualFilmStudio" target="_blank">
+						<span>Github
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+								viewBox="0 0 100 100" class="svg-icon">
+								<path fill="currentColor"
+									d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+								</path>
+								<polygon fill="currentColor"
+									points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+								</polygon>
+							</svg>
+						</span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+    <div class="banner-bg" id="banner">
+    <!-- <div class="" id="banner" style="width: 100%; height: 350px; overflow: hidden; display: flex; position: relative;"> -->
+		<img class="flying-text2" src="https://virtualfilmstudio.github.io/src/imgs/banner.png">
+
+		<div class="col flying-text6 color-white text-shadow">
+			<div id="" class="xl-font bold" style="font-size: 3em;">
+				Virtual Dynamic Storyboard
+			</div>
+			<div class="" style="margin-top: 0em; font-size: 1.2em;">
+				Dynamic Storyboard Generation in an Engine-based Virtual Environment for Video Production
+				<!-- <br>
+				Anonymous authors -->
+			</div>					
+					
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<div style="margin-bottom: 0.5em; margin-top:1em" class="authors">
+						<a style="color:#fbfbfb;" href="https://anyirao.com/" class="text-shadow">Anyi Rao*<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" class="text-shadow">Xuekun Jiang*<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" class="text-shadow">Yuwei Guo<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" href="https://eveneveno.github.io/lnxu/" class="text-shadow">Linning Xu<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" class="text-shadow">Lei Yang<sup>1</su1p></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" class="text-shadow">Libiao Jin<sup>4</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" href="http://dahua.site/" class="text-shadow">Dahua Lin<sup>1,3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a style="color:#fbfbfb;" href="https://daibo.info/" class="text-shadow">Bo Dai<sup>1</sup></a>
+					</div>
+		
+					<div style="margin-bottom: 0.5em;" class="affiliations">
+						<a href="https://www.shlab.org.cn/" class="text-shadow" style="color: #fbfbfb;">Shanghai AI Laboratory<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+						<a href="http://mmlab.ie.cuhk.edu.hk/" class="text-shadow" style="color: #fbfbfb;">Stanford University<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://mmlab.ie.cuhk.edu.hk/" class="text-shadow" style="color: #fbfbfb;">Chinese University of Hong Kong<sup>3</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a class="text-shadow" style="color: #fbfbfb;">Communication University of China<sup>4</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+		
+					<div style="margin-bottom: 0.7em; color:#fbfbfb;" class="text-shadow col-sm-12 text-center">
+						*denotes equal contribution
+					</div>
+		
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+
+	<div class="container">
+
+		<!-- introduction & demo storyboard -->
+		<div class="row" style="margin-top: 0em;" id="about">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<p class="lg-font bold font-georgia" style="margin-top: 1.5em; font-size: 1.3em">About</p>
+				<div class="font-georgia text-justify" style="margin-top: 0em; color: black; font-size: 1.25em;">
+					Virtual Dynamic Storyboard (VDS) allows users storyboarding shots in virtual environments, where the filming staffs can easily test the settings of shots before the actual filming🔥.
+				</div>
+			</div>
+			<div class="col-md"></div>
+		</div>
+
+		<div class="row" style="margin-top: 2em">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-4">
+				<div class="bold" style="text-align: right; line-height: 1.2em; font-size: 0.8em; margin-bottom: 1em;">
+					<div class="font-courier bold">[Story Script]&nbsp;</div>
+					<div class="font-georgia">
+						<span class="green-highlight">Jane and Jack</span>&nbsp;
+						<span class="yellow-highlight">are arguing</span>&nbsp;
+						<span class="red-highlight">in living room</span>.&nbsp;&nbsp;
+					</div>
+					<div class="font-courier bold" style="margin-top: 1em">[Camera Script]&nbsp;</div>
+					<div class="font-georgia">
+						<span class="green-highlight">Arc</span>&nbsp;
+						<span class="yellow-highlight">Medium</span>&nbsp;
+						<span class="red-highlight">High-angle</span>.&nbsp;&nbsp;
+					</div>
+				</div>
+			</div>
+			<div class="col-sm">
+				<video id="v11" width="100%" autoplay muted loop>
+					<source src="https://virtualfilmstudio.github.io/src/videos/omni_demo.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<!-- method overview & teaser -->
+		<div class="row" style="margin-top: 2em;" id="method">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="font-georgia text-justify" style="margin-top: 0em; color: black; font-size: 1.25em;">
+					<p>
+						Virtual Dynamic Storyboard runs on a “propose-simulate-discriminate” mode: given a formatted story script and a camera script as input, it generates several character animation and camera movement proposals following predefined story and cinematic rules⚡️.
+					</p>
+				</div>
+			</div>
+			<div class="col-sm"></div>
+		</div>
+		<div class="row" style="margin-top: 1em">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<img class="" width="100%" src="https://virtualfilmstudio.github.io/src/imgs/teaser.png" />
+			</div>
+			<div class="col-sm"></div>
+		</div>
+
+		<!-- overview demo video -->
+		<div class="row" style="margin-top: 2.5em;" id="overview">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<p class="lg-font bold font-georgia" style="margin-top: 1.5em; font-size: 1.3em">Overview</p>
+				<div class="font-georgia text-justify" style="margin-top: 0em; color: black; font-size: 1.25em;">
+					<p>
+						To get an overview understanding of Virtual Dynamic Storyboard (VDS), please refer to the following demo video, which detailedly illustrates VDS's pipeline and its user interfaces🚀.
+					</p>
+				</div>
+			</div>
+			<div class="col"></div>
+		</div>
+		<div class="row" style="margin-top: 0em">
+			<div class="col-sm-1"></div>
+			<div class="col-sm" >
+				<video id="v11" width="100%" controls>
+					<source src="https://virtualfilmstudio.github.io/src/videos/demo_video_overview.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<!-- demo videos for different camera scripts -->
+		<!-- <div class="row" style="margin-top: 8em;" id="">
+			<div class="col-1"></div>
+			<div class="col-8">
+				<div class="font-georgia" style="margin-top: 0em; color: black; font-size: 1.25em;">
+					<p>
+						Under the same story setting, users can try multiple shot styles by providing Virtual Dynamic Storyboard different camera srcipts, to deliver a satisfying video shot before the actual filming. 
+					</p>
+				</div>
+			</div>
+			<div class="col"></div>
+		</div>
+		-->
+
+		<!-- assert support -->
+		<div class="row" style="margin-top: 2.5em;" id="explore">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 text-justify">
+				<p class="bold font-georgia" style="margin-top: 1.5em; font-size: 1.3em">Explore</p>
+				<div class="font-georgia" style="margin-top: 0em; margin-top: 0em; color: black; font-size: 1.25em;">
+				<p>
+					Virtual Dynamic Storyboard currently supports:
+					<ul style="margin-left: 2em;">
+						<li>
+							<b>11 Camera Movements</b>: static, follow, push/pull, zoom-in/out, tilt, pan, dolly, pedestal, arc, dolly zoom, roll shots;
+						</li>
+						<li>
+							<b>8 Shot Scales</b>: extreme close-up, close-up, medium close, medium, medium full, full, long, and extreme long shots;
+						</li>
+						<li>
+							<b>3 Shot Angles</b>: eye-level, high-angle, low-angle;
+						</li>
+						<li>
+							<b>100+ Character Actions</b>: Walk, StandUp, Watch, Point, Grab, Jump, Talk, Touch, Dance, Cry, etc.;
+						</li>
+						<li>
+							<b>20 Characters</b>: Anna, Betty, Cindy, Robot Ben, Tom, Jack, Jane, and Mike, etc;
+						</li>
+						<li>
+							<b>20 Scenes</b>: 8 different indoor houses, 3 different streets, offices, factories, and farms, which contain 60 places, e.g., living rooms, bedrooms, and outside forests of a farm.
+						</li>
+					</ul>
+					Here we provide a glimpse of it🤗. [More to come]
+				</p>
+				</div>
+			</div>
+			<div class="col-sm"></div>
+		</div>
+
+		<!-- ShotMovements -->
+		<div class="row" style="margin-top: 1em;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10" style=" flex-direction:row;">
+				<div class="font-courier bold" style="font-size: 1.2em">[Shot Movements]</div>
+				<div style="display: flex; margin-left: 0em">
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/shottype-1.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Static</div>
+					</div>
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/shottype-2.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Push</div>
+					</div>
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/shottype-3.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Arc</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<div class="row" style="margin-top: 1em;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10" style=" flex-direction:row;">
+				<div class="font-courier bold" style="font-size: 1.2em">[Shot Scales]</div>
+				<div style="display: flex; margin-left: 0em">
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/scale-1.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Close-up</div>
+					</div>
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/scale-2.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Medium</div>
+					</div>
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/scale-3.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Full</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<div class="row" style="margin-top: 1em;">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10" style=" flex-direction:row;">
+				<div class="font-courier bold" style="font-size: 1.2em">[Shot Angles]</div>
+				<div style="display: flex; margin-left: 0em">
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/view1.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Low-angle</div>
+					</div>
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/view2.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">Eye-level</div>
+					</div>
+					<div style="flex:1;" align="center">
+						<video id="v11" width="95%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/view3.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold">High-angle</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+
+		<!-- <div class="row" style="margin-top: 0em; margin-left: 2em">
+			<div class="col-1">
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/shottype-1.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Static</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/shottype-2.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Push</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/shottype-3.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Arc</div>
+			</div>
+			<div class="col"></div>
+		</div> -->
+
+		<!-- Actions -->
+		<!-- <div class="row" style="margin-top: 2em; margin-left: 2em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Shot Scales]</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 0em; margin-left: 2em">
+			<div class="col-1">
+			</div>
+
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/scale-1.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Close</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/scale-2.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Medium</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/scale-3.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Full</div>
+			</div>
+			<div class="col"></div>
+		</div> -->
+		
+		<!-- CameraAngle -->
+		<!-- <div class="row" style="margin-top: 2em; margin-left: 2em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Shot Angle]</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 0em; margin-left: 2em">
+			<div class="col-1">
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/view1.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Low-angle</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/view2.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Eye-level</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/view3.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">High-angle</div>
+			</div>
+			<div class="col"></div>
+		</div> -->
+
+		<!-- Actions -->
+		<!-- <div class="row" style="margin-top: 2em; margin-left: 2em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Character Actions]</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 0em; margin-left: 2em">
+			<div class="col-1">
+			</div>
+
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/action1.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Hands on Hips</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/action2.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Dancing</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/action3.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">Hand Raising</div>
+			</div>
+			<div class="col"></div>
+		</div> -->
+
+		<!-- Characters -->
+		<!-- <div class="row" style="margin-top: 3em">
+			<div class="col-2">
+				<div class="bold" style="position: absolute; width: 98%; text-align: right; font-size: 1.2em; width: 90%;">
+					<div class="font-courier bold">[Character]</div>
+				</div>
+
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/multichar-1.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">XXX</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/multichar-2.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">XXX</div>
+			</div>
+			<div class="col-3">
+				<video id="v11" width="100%" autoplay loop muted>
+					<source src="https://virtualfilmstudio.github.io/src/videos/multichar-3.mp4" type="video/mp4" />
+				</video>
+				<div class="font-georgia bold">XXX</div>
+			</div>
+			<div class="col"></div>
+		</div> -->
+
+		<div class="row" style="margin-top: 4em;" id="omniverse">
+			<div class="col-sm-1"></div>
+			<div class="col-sm">
+				<p class="lg-font bold font-georgia" style="margin-top: -0.5em; font-size: 1.3em">Extension</p>
+				<div class="font-georgia" style="margin-top: 0em; color: black; font-size: 1.25em;">
+					<p class="text-justify">
+						Addtioanlly, we developed multiple user-friendly extentions to support users to personalized their adjustment🤗. 
+						[More to come]
+					</p>
+					<ul style="margin-left: 2em;">
+						<li style="margin-top: 2em">
+							<p class="text-justify">
+								<b>Camera Extension</b> for customized camera control on ISO, Shutter, etc.
+							</p>
+							<video id="v11" width="100%" style="margin-top: 1em" muted controls>
+								<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface3.mp4" type="video/mp4" />
+							</video>
+						</li>
+						<li style="margin-top: 2em">
+							<p class="text-justify">
+								<b>Rendering Extension</b> for customized shot on pre-defined camera behaviours, including Push, Pull, Zoom, Dolly, etc.
+							</p>
+							<video id="v11" width="100%" style="margin-top: 1em" muted controls>
+								<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface4.mp4" type="video/mp4" />
+							</video>
+						</li>
+						<li style="margin-top: 2em">
+							<p class="text-justify">
+								<b>Action Extension</b> for customized character actions.
+							</p>
+							<video id="v11" width="100%" style="margin-top: 1em" muted controls>
+								<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface2.mp4" type="video/mp4" />
+							</video>
+						</li>
+						<li style="margin-top: 2em">
+							<p class="text-justify">
+								<b>Data Synthesis Extension</b> for multi-modal data synthesis, including RBG Image, Instance Segmentation mask, Depth Map, etc.
+							</p>
+							<video id="v11" width="100%" style="margin-top: 1em" muted controls>
+								<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface1.mp4" type="video/mp4" />
+							</video>
+						</li>
+
+					</ul>
+					<!-- <p>
+						VDS is equiped with a shot ranking discriminator based on shot quality criteria learned from professional manual-created data to pick up the top quality dynamic storyboards.
+					</p> -->
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<!-- <div class="row" style="margin-top: 0em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Customized Camera Control on ISO, Shutter, etc]</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-1"></div>
+			<div class="col" align="center">
+				<video id="v11" width="100%" muted controls>
+					<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface3.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="col-2"></div>
+		</div>
+
+		<div class="row" style="margin-top: 1em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Customized Shot Movement such as Push/Pull, Zoom, Dolly, etc.]</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-1"></div>
+			<div class="col" align="center">
+				<video id="v11" width="100%" muted controls>
+					<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface4.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="col-2"></div>
+		</div>
+
+
+		<div class="row" style="margin-top: 1em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Customized Action]</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-1"></div>
+			<div class="col" align="center">
+				<video id="v11" width="100%" muted controls>
+					<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface2.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="col-2"></div>
+		</div>
+
+		<div class="row" style="margin-top: 1em">
+			<div class="col-1"></div>
+			<div class="col">
+				<div class="font-courier bold" style="font-size: 1.2em">[Customized Data Synthesis such as segmentation mask, depth map, etc.]</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row" style="margin-top: 0.5em">
+			<div class="col-1"></div>
+			<div class="col" align="center">
+				<video id="v11" width="100%" muted controls>
+					<source src="https://virtualfilmstudio.github.io/src/videos/omni_interface1.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<div class="col-2"></div>
+		</div> -->
+
+		<!-- <div class="row" id="demos">
+			<div class="col"></div>
+			<div class="col-8">
+				<p class="lg-font bold font-georgia" style="margin-top: 1em;">Demo Videos</p>
+				<p class="md-font bold font-georgia" style="margin-top: -0.5em; margin-bottom: -0em; font-size:160%;">Overview</p>
+				<video id="v11" width="100%" controls>
+					<source src="https://virtualfilmstudio.github.io/src/videos/demo_video_overview.mp4" type="video/mp4" />
+				</video>
+
+				<p class="md-font bold font-georgia" style="margin-top: 1em; font-size:160%;">Asset Support</p>
+				<p class="md-font bold font-georgia" style="margin-top: 0em; margin-bottom: -0em;">Multi ShotTypes</p>
+				<div>
+					<div class="row">
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/shottype-1~1.mp4" type="video/mp4" />
+							</video>
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Static</div>
+						</div>
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/shottype-2~1.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Push</div>
+						</div>
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/shottype-3~1.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Dolly</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="md-font bold font-georgia" style="margin-top: 0.5em; margin-bottom: -0em;">Multi Views</p>
+				<div class="row">
+					<div class="col-4">
+						<video id="v11" width="100%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/view1~1.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+					</div>
+					<div class="col-4">
+						<video id="v11" width="100%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/view2~1.mp4" type="video/mp4" />
+						</video>	
+						<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Eye-level</div>
+					</div>
+					<div class="col-4">
+						<video id="v11" width="100%" autoplay loop muted>
+							<source src="https://virtualfilmstudio.github.io/src/videos/view3~1.mp4" type="video/mp4" />
+						</video>
+						<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">High-angle</div>	
+					</div>
+				</div>
+				
+				<p class="md-font bold font-georgia" style="margin-top: 0.5em; margin-bottom: -0em;">Multi Actions</p>
+				<div>
+					<div class="row">
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/action1~1.mp4" type="video/mp4" />
+							</video>
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+						</div>
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/action2~1.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+						</div>
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/action3~1.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+						</div>
+					</div>
+				</div>
+				
+				<p class="md-font bold font-georgia" style="margin-top: 0.5em; margin-bottom: -0em;">Multi Characters</p>
+				<div>
+					<div class="row">
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/multichar-1.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+						</div>
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/multichar-2.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+						</div>
+						<div class="col-4">
+							<video id="v11" width="100%" autoplay loop muted>
+								<source src="https://virtualfilmstudio.github.io/src/videos/multichar-3.mp4" type="video/mp4" />
+							</video>	
+							<div class="font-georgia bold" style="margin-top: -0.5em;" align="center">Low-angle</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col"></div>
+		</div> -->
+		
+		<!-- <div class="row" id="contact">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-8 font-georgia" style="margin-bottom: 1em">
+				<p class="md-font bold" style="margin-top: 2em; margin-bottom: 0em;">Contact</p>
+				<div>
+					<span class="bold">Anyi Rao:</span>&nbsp;&nbsp;
+					<span class="color-grey">anyirao [at] stanford.edu</span>
+					<span>&nbsp;|&nbsp;</span>
+					<span><a href="https://anyirao.com/" target="_blank" class="stretched-link">Homepage</a>
+					</span>
+				</div>
+				<div>
+					<span class="bold">Bo Dai:</span>&nbsp;&nbsp;
+					<span class="color-grey">daibo [at] pjlab.org.cn</span>
+					<span>&nbsp;|&nbsp;</span>
+					<span><a href="https://daibo.info/" target="_blank" class="stretched-link">Homepage</a>
+					</span>
+				</div>
+				<div>
+					<span class="bold">Xuekun Jiang:</span>&nbsp;&nbsp;
+					<span class="color-grey">jiangxuekun [at] pjlab.org.cn</span>
+				</div>
+				<div>
+					<span class="bold">Yuwei Guo:</span>&nbsp;&nbsp;
+					<span class="color-grey">guoyuwei [at] pjlab.org.cn</span>
+				</div>
+			</div>
+			<div class="col-sm"></div>
+		</div> -->
+
+				<!-- <p class="lg-font bold abs-mg-top-lg">Multi Cinematic Feature Editing</p>
+				<div class="row">
+					<div class="col-xl-6 col-sm-6 col-xl-6">
+						<video src="https://virtualfilmstudio.github.io/src/videos/highlevel_feature.mp4" width="100%" autoplay loop muted controls>
+					</div>
+					<div class="col-xl-6 col-sm-6 col-xl-6">
+						<img src="https://virtualfilmstudio.github.io/src/imgs/lowlevel_feature.png" width="100%">
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-xl-12 col-sm-12 col-12 abs-mg-top-xl">
+				<p class="lg-font bold">Friendly User Control</p>
+				<p align="center">
+					<video id="v11" width="80%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/ui_demo.mp4" type="video/mp4" />
+					</video>
+				</p>
+			</div>
+
+			<div class="col-xl-12 col-sm-12 col-12 abs-mg-top-xl">
+				<p class="lg-font bold">Rich Asset Support</p>
+				<p class="md-font bold">Multi Characters</p>
+				<p align="center">
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/multichar-1.mp4" type="video/mp4" />
+					</video>
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/multichar-2.mp4" type="video/mp4" />
+					</video>
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/multichar-3.mp4" type="video/mp4" />
+					</video>
+				</p>
+				
+				<p class="md-font bold">Multi Actions</p>
+				<p align="center">
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/action1~1.mp4" type="video/mp4" />
+					</video>
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/action2~1.mp4" type="video/mp4" />
+					</video>
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/action3~1.mp4" type="video/mp4" />
+					</video>
+				</p>
+
+				<p class="md-font bold">Multi Views</p>
+				<p align="center">
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/view1~1.mp4" type="video/mp4" />
+					</video>
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/view2~1.mp4" type="video/mp4" />
+					</video>
+					<video id="v11" width="30%" autoplay loop muted controls>
+						<source src="https://virtualfilmstudio.github.io/src/videos/view3~1.mp4" type="video/mp4" />
+					</video>
+				</p>
+
+			</div>
+		</div> -->
+
+
+	<script>
+		respondToWindowWidth();
+		$(window).resize(function () {
+			respondToWindowWidth();
+		});
+		event_bind();
+		popover_bind();
+		// respondToWindowWidth();
+		// var mymap = L.map('map-lab').setView([22.418, -245.792], 13);
+		// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		// 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		// 	maxZoom: 18,
+		// 	id: 'mapbox.streets',
+		// 	accessToken: 'pk.eyJ1IjoieXhpb25nMTIzIiwiYSI6ImNqeG9sYTRjNjA4Nm8zY3F1eXh4OWYyanAifQ.QskNkkb0DCuJCwo0d7ze2w'
+		// }).addTo(mymap);
+		// var marker = L.marker([22.418, -245.792]).addTo(mymap);
+		// marker.bindPopup("<b>MMLab (SHB 703, IE)</b><br>I am here.").openPopup();
+	</script>
+
+</body>
+</html>
